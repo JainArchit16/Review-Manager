@@ -21,10 +21,23 @@ const Card = (props) => {
     }
     function rightShiftHandler()
     {
-
+        if(props.index+1>props.len-1)
+        {
+            props.setIndex(0);
+        }
+        else
+        {
+            props.setIndex(props.index+1);
+        }
     }
     function surpriceShiftHandler() {
-        
+        let x=Math.floor(Math.random()*props.len);
+        while(x==props.index)
+        {
+            x=Math.floor(Math.random()*props.len);
+        }
+        console.log(x);
+        props.setIndex(x);
     }
 
     return (
